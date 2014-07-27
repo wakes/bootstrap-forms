@@ -5,15 +5,15 @@
     "keywords": ["silverstripe", "bootstrap", "forms", "twitter"],
 	"license": "BSD-3-Clause",
     "authors": [
-    {
-        "name": "Uncle Cheese",
-        "email": "unclecheese@leftandmain.com"
-    }
-    ],
-	{
-		"name": "Steve Wake",
-		"email": "wakes@digitalhod.net"
-	}
+    	{
+        	"name": "Uncle Cheese",
+        	"email": "unclecheese@leftandmain.com"
+    	},
+		{
+			"name": "Steve Wake",
+			"email": "wakes@digitalhod.net"
+		}
+	],
     "require":
     {
         "silverstripe/framework": "3.*",

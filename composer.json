@@ -1,6 +1,6 @@
 {
-    "name": "unclecheese/bootstrap-forms",
-    "description": "Allows you to create forms in SilverStripe that are compatible with Twitter Bootstrap.",
+    "name": "wakes/bootstrap-forms",
+    "description": "Allows you to create forms in SilverStripe that are compatible with Twitter Bootstrap 3.",
     "type": "silverstripe-module",
     "keywords": ["silverstripe", "bootstrap", "forms", "twitter"],
 	"license": "BSD-3-Clause",
@@ -10,6 +10,10 @@
         "email": "unclecheese@leftandmain.com"
     }
     ],
+	{
+		"name": "Steve Wake",
+		"email": "wakes@digitalhod.net"
+	}
     "require":
     {
         "silverstripe/framework": "3.*",

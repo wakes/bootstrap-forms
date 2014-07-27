@@ -1,5 +1,5 @@
 {
-    "name": "wakes/silverstripe-bootstrap-forms",
+    "name": "wakes/bootstrap-forms",
     "description": "Allows you to create forms in SilverStripe that are compatible with Twitter Bootstrap 3.",
     "type": "silverstripe-module",
     "keywords": ["silverstripe", "bootstrap", "forms", "twitter"],

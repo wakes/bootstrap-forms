@@ -11,7 +11,7 @@
  * @package boostrap_forms
  */
 class BootstrapForm extends Form {
-	
+
 
 
 
@@ -136,10 +136,12 @@ class BootstrapForm extends Form {
 	public function forTemplate() {
 		if(!$this->stat('bootstrap_included')) {
 			Requirements::css(BOOTSTRAP_FORMS_DIR.'/css/bootstrap.css');
+			Requirements::css(BOOTSTRAP_FORMS_DIR.'/css/bootstrap-theme.min.css');
 		}
 		if(!$this->stat('jquery_included')) {
 			Requirements::javascript(THIRDPARTY_DIR."/jquery/jquery.js");
 		}
+		Requirements::javascript(BOOTSTRAP_FORMS_DIR."/javascript/bootstrap.min.js");
 		Requirements::javascript(BOOTSTRAP_FORMS_DIR."/javascript/bootstrap_forms.js");
 		$this->addExtraClass("form-{$this->formLayout}");
 		$this->applyBootstrap();

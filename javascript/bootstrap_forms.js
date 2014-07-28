@@ -1,5 +1,27 @@
 (function($) {
 $(function() {
+	// dropdowns need to be configured when javascript is enabled.
+	$('.dropdown-select').hide();
+	$('.dropdown-toggle').show();
+
+	// sync selected list item with the select control
+	$('.dropdown-menu a').on('click', function(ev) {
+		var rel = $(this).attr('rel');
+		$(rel + '_select').val($(this).data('value'));
+		$(rel + '_select').change();
+		$(rel + '_label').text($(this).text());
+	});
+	// for optionsets hide the actual radio input if javascript enabled
+	$('.optionset input[type="radio"]').hide();
+
+	// radio buttons need active set on them when the label is clicked
+	$('.optionset label').on('click', function(ev) {
+		$('.btn', $(this).parents('.optionset')).removeClass('active');
+		$(this).parents('.btn').addClass('active');
+		$('input[type="radio"]', $(this)).prop('checked', true);
+	});
+
+
 	if($('textarea.wysiwyg').length) {
 		$('textarea.wysiwyg').each(function() {
 			var $t = $(this);
@@ -15,8 +37,8 @@ $(function() {
 		});
 	}
 
-	
-	
+
+
 	if($('select.chosen').length) {
 	    $('select.chosen').chosen({
 	      disable_search_threshold: $(this).attr('data-search-threshold')
@@ -24,9 +46,9 @@ $(function() {
     }
 
 
-	if($('textarea[maxlength]').length) {		
+	if($('textarea[maxlength]').length) {
 		$('textarea[maxlength]').parent().append("<p class='notes charsRemaining'>&nbsp;</p>");
-		$('textarea[maxlength]').keyup(function(){		
+		$('textarea[maxlength]').keyup(function(){
 			var charText = $(this).attr('characters-remaining-text');
 			if(!charText) charText = " characters remaining";
 			var max = parseInt($(this).attr('maxlength'));
@@ -37,7 +59,6 @@ $(function() {
 		});
 	}
 
-
 	if($('.field.bootstrapbuttongroup').length) {
 
 		$('.field.bootstrapbuttongroup .btn-group button').click(function(e) {
@@ -47,7 +68,7 @@ $(function() {
 			$(this).addClass('active');
 			$holder.find(':hidden').val($(this).data('value')).trigger('change');
 
-		}).filter('.active').click();	
+		}).filter('.active').click();
 	}
 
 

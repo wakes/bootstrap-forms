@@ -22,4 +22,5 @@ class BootstrapOptionsetField extends BootstrapFormField {
 		$this->owner->Inline = $bool;
 		return $this->owner;
 	}
+
 }

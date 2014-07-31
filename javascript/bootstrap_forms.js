@@ -6,8 +6,10 @@ $(function() {
 
 	// sync selected list item with the select control
 	$('.dropdown-menu a').on('click', function(ev) {
-		var rel = $(this).attr('rel');
-		$(rel + '_select').val($(this).data('value'));
+		var rel = $(this).attr('rel'),
+			value = $(this).data('value');
+
+		$(rel + '_select').val(value);
 		$(rel + '_select').change();
 		$(rel + '_label').text($(this).text());
 	});
